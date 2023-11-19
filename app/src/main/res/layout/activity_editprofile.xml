@@ -4,73 +4,60 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/main">
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="330dp"
-        android:layout_height="111dp"
-        android:contentDescription="logo"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.256"
-        app:srcCompat="@drawable/logo" />
+    android:background="@drawable/simplebg">
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/textView3"
+        android:layout_width="143dp"
+        android:layout_height="52dp"
         android:fontFamily="@font/jua"
-        android:text="A personal diary app"
+        android:text="welcome to"
+        android:textAlignment="center"
         android:textColor="#825C03"
+        android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.366"
-        tools:text="personal diary" />
+        app:layout_constraintVertical_bias="0.07" />
 
     <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="161dp"
-        android:layout_height="160dp"
-        android:contentDescription="bunny"
+        android:id="@+id/imageView6"
+        android:layout_width="293dp"
+        android:layout_height="103dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499"
-        app:srcCompat="@drawable/bunny" />
+        app:layout_constraintVertical_bias="0.1"
+        app:srcCompat="@drawable/logo" />
 
     <ImageButton
-        android:id="@+id/imageButton4"
+        android:id="@+id/imageButton3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#00FFFFFF"
-        android:contentDescription="register"
+        android:contentDescription="back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.544"
+        app:layout_constraintHorizontal_bias="0.564"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.704"
-        app:srcCompat="@drawable/register" />
+        app:layout_constraintVertical_bias="0.768"
+        app:srcCompat="@drawable/back" />
 
     <ImageButton
-        android:id="@+id/imageButton7"
+        android:id="@+id/imageButton2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#00FFFFFF"
-        android:contentDescription="login"
+        android:contentDescription="save profile"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.549"
+        app:layout_constraintHorizontal_bias="0.559"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.806"
-        app:srcCompat="@drawable/login" />
+        app:layout_constraintVertical_bias="0.864"
+        app:srcCompat="@drawable/saveprof" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

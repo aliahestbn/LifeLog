@@ -4,73 +4,59 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/main">
+    android:background="@drawable/creatdiarybg">
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="330dp"
-        android:layout_height="111dp"
-        android:contentDescription="logo"
+        android:id="@+id/imageView8"
+        android:layout_width="293dp"
+        android:layout_height="103dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.256"
+        app:layout_constraintVertical_bias="0.092"
         app:srcCompat="@drawable/logo" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/jua"
-        android:text="A personal diary app"
-        android:textColor="#825C03"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.366"
-        tools:text="personal diary" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="161dp"
-        android:layout_height="160dp"
-        android:contentDescription="bunny"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499"
-        app:srcCompat="@drawable/bunny" />
-
     <ImageButton
-        android:id="@+id/imageButton4"
+        android:id="@+id/imageButton10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#00FFFFFF"
-        android:contentDescription="register"
+        android:contentDescription="back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.544"
+        app:layout_constraintHorizontal_bias="0.596"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.704"
-        app:srcCompat="@drawable/register" />
+        app:layout_constraintVertical_bias="0.755"
+        app:srcCompat="@drawable/back" />
 
     <ImageButton
-        android:id="@+id/imageButton7"
+        android:id="@+id/imageButton12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#00FFFFFF"
-        android:contentDescription="login"
+        android:contentDescription="delete"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.549"
+        app:layout_constraintHorizontal_bias="0.596"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.806"
-        app:srcCompat="@drawable/login" />
+        app:layout_constraintVertical_bias="0.915"
+        app:srcCompat="@drawable/delete" />
+
+    <ImageButton
+        android:id="@+id/imageButton11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#00FFFFFF"
+        android:contentDescription="save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.596"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.835"
+        app:srcCompat="@drawable/save" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
