@@ -10,4 +10,8 @@ class History : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_history)
     }
+    fun redirectToHomePage(view: View) { // Back > HomePage
+        val intent = Intent(this, HomePage::class.java);
+        startActivity(intent);
+    }
 }

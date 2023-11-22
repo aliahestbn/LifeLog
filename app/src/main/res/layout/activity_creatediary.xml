@@ -6,6 +6,54 @@
     android:layout_height="match_parent"
     android:background="@drawable/creatdiarybg">
 
+    <EditText
+        android:id="@+id/roundedEditText8"
+        android:layout_width="185dp"
+        android:layout_height="39dp"
+        android:layout_margin="16dp"
+        android:background="@drawable/rounded_edittext_background"
+        android:hint="date"
+        android:inputType="text"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.654"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.16" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="143dp"
+        android:layout_height="52dp"
+        android:fontFamily="@font/jua"
+        android:text="Date: "
+        android:textAlignment="center"
+        android:textColor="#825C03"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.138"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.185" />
+
+    <EditText
+        android:id="@+id/roundedEditText7"
+        android:layout_width="295dp"
+        android:layout_height="319dp"
+        android:layout_margin="16dp"
+        android:background="@drawable/rounded_edittext_background"
+        android:hint="type here..."
+        android:inputType="text"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.424" />
+
     <ImageView
         android:id="@+id/imageView8"
         android:layout_width="293dp"
@@ -14,7 +62,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.092"
+        app:layout_constraintVertical_bias="0.05"
         app:srcCompat="@drawable/logo" />
 
     <ImageButton
@@ -23,13 +71,13 @@
         android:layout_height="wrap_content"
         android:backgroundTint="#00FFFFFF"
         android:contentDescription="back"
-        android:onClick= "redirectToHomePage"
+        android:onClick="redirectToHomePage"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.595"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.721"
+        app:layout_constraintVertical_bias="0.766"
         app:srcCompat="@drawable/back" />
 
     <ImageButton
@@ -38,13 +86,13 @@
         android:layout_height="wrap_content"
         android:backgroundTint="#00FFFFFF"
         android:contentDescription="delete"
-        android:onClick= "redirectToHomePage3"
+        android:onClick="redirectToHomePage3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.596"
+        app:layout_constraintHorizontal_bias="0.595"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.915"
+        app:layout_constraintVertical_bias="0.961"
         app:srcCompat="@drawable/delete" />
 
     <ImageButton
@@ -53,13 +101,13 @@
         android:layout_height="wrap_content"
         android:backgroundTint="#00FFFFFF"
         android:contentDescription="save"
-        android:onClick= "redirectToHomePage2"
+        android:onClick="redirectToHomePage2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.596"
+        app:layout_constraintHorizontal_bias="0.595"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.835"
+        app:layout_constraintVertical_bias="0.864"
         app:srcCompat="@drawable/save" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
