@@ -21,17 +21,17 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="158dp"
+        android:layout_height="29dp"
         android:fontFamily="@font/jua"
         android:text="A personal diary app"
+        android:textAlignment="center"
         android:textColor="#825C03"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.366"
-        tools:text="personal diary" />
+        app:layout_constraintVertical_bias="0.366" />
 
     <ImageView
         android:id="@+id/imageView2"
