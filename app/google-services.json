@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "924688087351",
+    "project_id": "lifelog-4e3f0",
+    "storage_bucket": "lifelog-4e3f0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:924688087351:android:6559a38d79c3e7ca0302b2",
+        "android_client_info": {
+          "package_name": "com.example.lifelog"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1IpA2jM1qxltcc9_s3XD257RHGHRbG9o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

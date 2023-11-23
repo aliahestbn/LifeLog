@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         //update
-        var empUpdate = mapOf<String, String>("empName" to "Jakob Michael Palomo")
+        var empUpdate = mapOf<String, String>("empName" to "Hwang Minhyun")
         databaseReference.child("uniqueid").child("sampleOne").updateChildren(empUpdate).addOnSuccessListener {
             Toast.makeText(this, "Update", Toast.LENGTH_SHORT).show()
         }
