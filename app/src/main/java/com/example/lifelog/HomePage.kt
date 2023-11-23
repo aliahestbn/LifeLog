@@ -6,6 +6,9 @@ import android.view.View
 import android.widget.CalendarView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
 class HomePage : AppCompatActivity() {
 
@@ -35,8 +38,13 @@ class HomePage : AppCompatActivity() {
             intent.putExtra("selectedDate", selectedDate)
             startActivity(intent)
         } else {
-            // Display a message if no date is selected
-            Toast.makeText(this, "Please select a date first", Toast.LENGTH_SHORT).show()
+            val currentDate = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(Date())
+            Toast.makeText(this, "No date selected. Using current date: $currentDate", Toast.LENGTH_SHORT).show()
+
+            // Use the current date for redirection to CreateDiary
+            val intent = Intent(this, CreateDiary::class.java)
+            intent.putExtra("selectedDate", currentDate)
+            startActivity(intent)
         }
     }
 
@@ -53,4 +61,3 @@ class HomePage : AppCompatActivity() {
         startActivity(intent);
     }
 }
-
