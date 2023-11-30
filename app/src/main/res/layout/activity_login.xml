@@ -46,7 +46,7 @@
         app:layout_constraintVertical_bias="0.335" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/btnLoginUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#00FFFFFF"
@@ -61,7 +61,7 @@
         app:srcCompat="@drawable/login" />
 
     <EditText
-        android:id="@+id/roundedEditText2"
+        android:id="@+id/txtPassword"
         android:layout_width="269dp"
         android:layout_height="61dp"
         android:layout_margin="16dp"
@@ -96,19 +96,19 @@
         android:layout_width="143dp"
         android:layout_height="52dp"
         android:fontFamily="@font/jua"
-        android:text="username"
+        android:text="email"
         android:textAlignment="center"
         android:textColor="#825C03"
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.22"
+        app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.475" />
+        app:layout_constraintVertical_bias="0.478" />
 
     <EditText
-        android:id="@+id/roundedEditText"
+        android:id="@+id/txtUsername"
         android:layout_width="269dp"
         android:layout_height="61dp"
         android:layout_margin="16dp"
