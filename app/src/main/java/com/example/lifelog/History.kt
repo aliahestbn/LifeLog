@@ -6,6 +6,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 
 class History : AppCompatActivity() {
@@ -21,8 +22,8 @@ class History : AppCompatActivity() {
         recyclerView = findViewById(R.id.list_entry)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-        // Initialize Firebase Database reference
-        databaseReference = FirebaseDatabase.getInstance().getReference("DiaryEntries")
+        val userUid = FirebaseAuth.getInstance().currentUser?.uid ?: ""
+        databaseReference = FirebaseDatabase.getInstance().getReference("DiaryEntries").child(userUid)
 
         fetchDatesFromFirebase()
     }
@@ -33,12 +34,10 @@ class History : AppCompatActivity() {
         databaseReference.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 for (snapshot in dataSnapshot.children) {
-                    // Assuming "date" is the key used in Firebase for dates
                     val date = snapshot.key
                     date?.let { datesList.add(it) }
                 }
 
-                // Initialize and set up the adapter with retrieved dates
                 historyAdapter = HistoryAdapter(datesList)
                 recyclerView.adapter = historyAdapter
             }
@@ -49,7 +48,7 @@ class History : AppCompatActivity() {
         })
     }
 
-    fun redirectToHomePage(view: View) { // Back > HomePage
+    fun redirectToHomePage(view: View) {
         val intent = Intent(this, HomePage::class.java)
         startActivity(intent)
     }

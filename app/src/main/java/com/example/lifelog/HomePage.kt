@@ -37,6 +37,7 @@ class HomePage : AppCompatActivity() {
             val intent = Intent(this, CreateDiary::class.java)
             intent.putExtra("selectedDate", selectedDate)
             startActivity(intent)
+
         } else {
             val currentDate = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(Date())
             Toast.makeText(this, "No date selected. Using current date: $currentDate", Toast.LENGTH_SHORT).show()
@@ -45,6 +46,7 @@ class HomePage : AppCompatActivity() {
             val intent = Intent(this, CreateDiary::class.java)
             intent.putExtra("selectedDate", currentDate)
             startActivity(intent)
+
         }
     }
 
