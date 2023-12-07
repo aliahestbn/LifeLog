@@ -26,18 +26,11 @@ class CreateDiary : AppCompatActivity() {
 
         firebaseAuth = FirebaseAuth.getInstance()
 
-        // Retrieve the selected date from the intent
         val selectedDate = intent.getStringExtra("selectedDate")
+        val selectedContent = intent.getStringExtra("selectedContent")
 
-        // Log the selected date for debugging
-        Toast.makeText(this, "Selected Date from Intent: $selectedDate", Toast.LENGTH_SHORT).show()
-        Log.d("CreateDiary", "Selected Date from Intent: $selectedDate")
-
-        // Check if the selected date is not null
-        if (selectedDate != null) {
-            // Set the selected date to the date EditText
-            dateEditText.setText(selectedDate)
-        }
+        dateEditText.setText(selectedDate)
+        diaryContentEditText.setText(selectedContent)
     }
 
     private fun getCurrentUserUid(): String? {

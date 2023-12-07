@@ -38,7 +38,12 @@ class History : AppCompatActivity() {
                     date?.let { datesList.add(it) }
                 }
 
-                historyAdapter = HistoryAdapter(datesList)
+                historyAdapter = HistoryAdapter(datesList) { selectedDate ->
+                    // Handle item click, open CreateDiary activity with selected date
+                    val intent = Intent(this@History, CreateDiary::class.java)
+                    intent.putExtra("selectedDate", selectedDate)
+                    startActivity(intent)
+                }
                 recyclerView.adapter = historyAdapter
             }
 
