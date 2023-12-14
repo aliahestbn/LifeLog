@@ -3,6 +3,8 @@ package com.example.lifelog
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.CalendarView
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -14,6 +16,7 @@ class History : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var historyAdapter: HistoryAdapter
     private lateinit var databaseReference: DatabaseReference
+    private lateinit var userEmailTextView: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,7 +25,12 @@ class History : AppCompatActivity() {
         recyclerView = findViewById(R.id.list_entry)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-        val userUid = FirebaseAuth.getInstance().currentUser?.uid ?: ""
+        // Retrieve user email and set it to the TextView
+        userEmailTextView = findViewById(R.id.textView16)
+        val user = FirebaseAuth.getInstance().currentUser
+        userEmailTextView.text = user?.email
+
+        val userUid = user?.uid ?: ""
         databaseReference = FirebaseDatabase.getInstance().getReference("DiaryEntries").child(userUid)
 
         fetchDatesFromFirebase()
