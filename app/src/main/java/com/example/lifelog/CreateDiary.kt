@@ -23,15 +23,79 @@ class CreateDiary : AppCompatActivity() {
 
         dateEditText = findViewById(R.id.roundedEditText8)
         diaryContentEditText = findViewById(R.id.roundedEditText7)
-
         firebaseAuth = FirebaseAuth.getInstance()
 
         val selectedDate = intent.getStringExtra("selectedDate")
         val selectedContent = intent.getStringExtra("selectedContent")
+        val selectedId = intent.getStringExtra("selectedId")
 
         dateEditText.setText(selectedDate)
         diaryContentEditText.setText(selectedContent)
+
+        if (!selectedId.isNullOrEmpty()) {
+            findViewById<View>(R.id.imageButton11).setOnClickListener {
+                val diaryContent = diaryContentEditText.text.toString()
+                val newSelectedDate = dateEditText.text.toString()
+                val userUid = getCurrentUserUid()
+
+                if (userUid != null && diaryContent.isNotEmpty() && newSelectedDate.isNotEmpty()) {
+                    val databaseReference = FirebaseDatabase.getInstance()
+                        .getReference("DiaryEntries")
+                        .child(userUid)
+                        .child(selectedId)
+
+                    val diaryEntry = hashMapOf(
+                        "date" to newSelectedDate,
+                        "content" to diaryContent
+                    )
+
+                    databaseReference.updateChildren(diaryEntry as MutableMap<String, Any>)
+                        .addOnSuccessListener {
+                            Toast.makeText(this, "Diary entry updated!", Toast.LENGTH_SHORT).show()
+                            val intent = Intent(this, HomePage::class.java)
+                            startActivity(intent)
+                        }
+                        .addOnFailureListener {
+                            Toast.makeText(this, "Failed to update diary entry", Toast.LENGTH_SHORT).show()
+                        }
+                } else {
+                    Toast.makeText(
+                        this,
+                        "Please enter both date and diary content",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+            }
+
+            findViewById<View>(R.id.imageButton12).setOnClickListener {
+                val userUid = getCurrentUserUid()
+
+                if (userUid != null && !selectedId.isNullOrEmpty()) {
+                    val databaseReference = FirebaseDatabase.getInstance()
+                        .getReference("DiaryEntries")
+                        .child(userUid)
+                        .child(selectedId)
+
+                    databaseReference.removeValue()
+                        .addOnSuccessListener {
+                            Toast.makeText(this, "Diary entry deleted!", Toast.LENGTH_SHORT).show()
+                            val intent = Intent(this, HomePage::class.java)
+                            startActivity(intent)
+                        }
+                        .addOnFailureListener {
+                            Toast.makeText(this, "Failed to delete diary entry", Toast.LENGTH_SHORT).show()
+                        }
+                } else {
+                    Toast.makeText(this, "No entry to delete", Toast.LENGTH_SHORT).show()
+                }
+            }
+        } else {
+            findViewById<View>(R.id.imageButton11).setOnClickListener {
+                redirectToHomePage2(it)
+            }
+        }
     }
+
 
     private fun getCurrentUserUid(): String? {
         return firebaseAuth.currentUser?.uid

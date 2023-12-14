@@ -84,9 +84,9 @@
 
         <CalendarView
             android:id="@+id/calendarView"
-            android:layout_width="333dp"
-            android:layout_height="320dp"
-            android:layout_marginBottom="52dp"
+            android:layout_width="349dp"
+            android:layout_height="327dp"
+            android:layout_marginBottom="44dp"
             android:background="#00FFFFFF"
             app:layout_constraintBottom_toTopOf="@+id/imageButton5"
             app:layout_constraintEnd_toEndOf="parent"
