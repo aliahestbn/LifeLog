@@ -10,7 +10,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.lifelog"
-        minSdk = 34
+        minSdk = 33
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -42,7 +42,6 @@ android {
         viewBinding = true
     }
 }
-
 dependencies {
 
     implementation("androidx.core:core-ktx:1.9.0")

@@ -7,30 +7,30 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 class HistoryAdapter(
-    private val dates: List<String>,
-    private val onItemClick: (String) -> Unit
-) : RecyclerView.Adapter<HistoryAdapter.DateViewHolder>() {
+    private val entries: List<Pair<String, String>>,
+    private val onItemClick: (Pair<String, String>) -> Unit
+) : RecyclerView.Adapter<HistoryAdapter.EntryViewHolder>() {
 
-    class DateViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class EntryViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val dateTextView: TextView = itemView.findViewById(R.id.entryDate)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DateViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EntryViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.entry_item, parent, false)
-        return DateViewHolder(view)
+        return EntryViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: DateViewHolder, position: Int) {
-        val date = dates[position]
+    override fun onBindViewHolder(holder: EntryViewHolder, position: Int) {
+        val (date, content) = entries[position]
         holder.dateTextView.text = date
 
         holder.itemView.setOnClickListener {
-            onItemClick.invoke(date)
+            onItemClick.invoke(entries[position])
         }
     }
 
     override fun getItemCount(): Int {
-        return dates.size
+        return entries.size
     }
 }

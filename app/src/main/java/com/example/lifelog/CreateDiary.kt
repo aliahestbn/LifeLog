@@ -43,7 +43,7 @@ class CreateDiary : AppCompatActivity() {
 
         val userUid = getCurrentUserUid()
 
-        if (userUid != null && diaryContent.isNotEmpty()) {
+        if (userUid != null && diaryContent.isNotEmpty() && selectedDate.isNotEmpty()) {
             val diaryId = UUID.randomUUID().toString()
 
             val databaseReference =
@@ -54,7 +54,8 @@ class CreateDiary : AppCompatActivity() {
                 "content" to diaryContent
             )
 
-            databaseReference.child("$selectedDate/$diaryId").setValue(diaryEntry)
+            // Save the diary entry under a user's section with a unique ID
+            databaseReference.child(diaryId).setValue(diaryEntry)
                 .addOnSuccessListener {
                     Toast.makeText(this, "Diary entry saved!", Toast.LENGTH_SHORT).show()
                 }
@@ -62,8 +63,10 @@ class CreateDiary : AppCompatActivity() {
                     Toast.makeText(this, "Failed to save diary entry", Toast.LENGTH_SHORT).show()
                 }
         } else {
-            Toast.makeText(this, "Please enter diary content", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Please enter both date and diary content", Toast.LENGTH_SHORT).show()
         }
+        val intent = Intent(this, HomePage::class.java)
+        startActivity(intent)
     }
 
     fun redirectToHomePage(view: View) {

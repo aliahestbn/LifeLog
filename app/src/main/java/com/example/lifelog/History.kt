@@ -29,19 +29,22 @@ class History : AppCompatActivity() {
     }
 
     private fun fetchDatesFromFirebase() {
-        val datesList = mutableListOf<String>()
+        val entriesList = mutableListOf<Pair<String, String>>() // Pair of date and content
 
         databaseReference.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 for (snapshot in dataSnapshot.children) {
-                    val date = snapshot.key
-                    date?.let { datesList.add(it) }
+                    val date = snapshot.child("date").getValue(String::class.java) ?: ""
+                    val content = snapshot.child("content").getValue(String::class.java) ?: ""
+
+                    entriesList.add(Pair(date, content))
                 }
 
-                historyAdapter = HistoryAdapter(datesList) { selectedDate ->
+                historyAdapter = HistoryAdapter(entriesList) { selectedEntry ->
                     // Handle item click, open CreateDiary activity with selected date
                     val intent = Intent(this@History, CreateDiary::class.java)
-                    intent.putExtra("selectedDate", selectedDate)
+                    intent.putExtra("selectedDate", selectedEntry.first) // Pass the selected date
+                    intent.putExtra("selectedContent", selectedEntry.second) // Pass the selected content
                     startActivity(intent)
                 }
                 recyclerView.adapter = historyAdapter
