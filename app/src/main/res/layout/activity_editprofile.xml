@@ -43,74 +43,13 @@
             android:id="@+id/imageButton17"
             android:layout_width="153dp"
             android:layout_height="62dp"
+            android:layout_marginTop="400dp"
             android:backgroundTint="#00FFFFFF"
-            app:layout_constraintBottom_toTopOf="@+id/roundedEditText4"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.484"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.913"
             app:srcCompat="@drawable/upload" />
-
-        <EditText
-            android:id="@+id/roundedEditText4"
-            android:layout_width="269dp"
-            android:layout_height="61dp"
-            android:layout_margin="16dp"
-            android:background="@drawable/rounded_edittext_background"
-            android:fontFamily="@font/jua"
-            android:hint="password"
-            android:inputType="textPassword"
-            android:paddingLeft="24dp"
-            app:layout_constraintBottom_toTopOf="@+id/imageButton3"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.776" />
-
-        <EditText
-            android:id="@+id/roundedEditText"
-            android:layout_width="269dp"
-            android:layout_height="61dp"
-            android:layout_margin="16dp"
-            android:background="@drawable/rounded_edittext_background"
-            android:fontFamily="@font/jua"
-            android:hint="new password"
-            android:inputType="textPassword"
-            android:paddingLeft="24dp"
-            app:layout_constraintBottom_toTopOf="@+id/imageButton3"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
-
-        <TextView
-            android:id="@+id/textView7"
-            android:layout_width="112dp"
-            android:layout_height="34dp"
-            android:layout_marginEnd="156dp"
-            android:fontFamily="@font/jua"
-            android:text="password"
-            android:textAlignment="center"
-            android:textColor="#825C03"
-            android:textSize="25sp"
-            app:layout_constraintBottom_toTopOf="@+id/roundedEditText4"
-            app:layout_constraintEnd_toEndOf="@+id/roundedEditText4"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
-
-        <TextView
-            android:id="@+id/textView13"
-            android:layout_width="169dp"
-            android:layout_height="36dp"
-            android:fontFamily="@font/jua"
-            android:text="new password"
-            android:textAlignment="center"
-            android:textColor="#825C03"
-            android:textSize="25sp"
-            app:layout_constraintBottom_toTopOf="@+id/roundedEditText"
-            app:layout_constraintEnd_toEndOf="@+id/roundedEditText"
-            app:layout_constraintHorizontal_bias="0.01"
-            app:layout_constraintStart_toStartOf="@+id/roundedEditText" />
 
         <ImageButton
             android:id="@+id/imageButton3"
@@ -131,7 +70,7 @@
             android:id="@+id/imageButton2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="616dp"
+            android:layout_marginTop="568dp"
             android:backgroundTint="#00FFFFFF"
             android:contentDescription="save profile"
             android:onClick="redirectToHomePage"
@@ -143,8 +82,8 @@
 
         <ImageView
             android:id="@+id/imageView11"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:scaleType="fitCenter"
             app:layout_constraintBottom_toTopOf="@+id/imageButton17"
             app:layout_constraintEnd_toEndOf="parent"
