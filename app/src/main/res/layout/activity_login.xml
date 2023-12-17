@@ -60,15 +60,15 @@
                 android:layout_height="61dp"
                 android:layout_margin="16dp"
                 android:background="@drawable/rounded_edittext_background"
+                android:fontFamily="@font/jua"
                 android:hint="username"
                 android:inputType="text"
-                android:padding="10dp"
+                android:paddingLeft="24dp"
                 app:layout_constraintBottom_toTopOf="@+id/txtPassword"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.436"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.849" />
+                app:layout_constraintVertical_bias="0.92" />
 
             <EditText
                 android:id="@+id/txtPassword"
@@ -76,47 +76,43 @@
                 android:layout_height="61dp"
                 android:layout_margin="16dp"
                 android:background="@drawable/rounded_edittext_background"
+                android:fontFamily="@font/jua"
                 android:hint="password"
-                android:inputType="text"
-                android:padding="10dp"
+                android:inputType="textPassword"
+                android:paddingLeft="24dp"
                 app:layout_constraintBottom_toTopOf="@+id/btnLoginUser"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.45"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.967" />
+                app:layout_constraintVertical_bias="1.0" />
 
             <TextView
                 android:id="@+id/textView6"
-                android:layout_width="108dp"
-                android:layout_height="41dp"
+                android:layout_width="98dp"
+                android:layout_height="33dp"
                 android:fontFamily="@font/jua"
                 android:text="email"
                 android:textAlignment="center"
                 android:textColor="#825C03"
                 android:textSize="25sp"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/txtUsername"
                 app:layout_constraintEnd_toEndOf="@+id/txtUsername"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/txtUsername"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.46" />
+                app:layout_constraintStart_toStartOf="@+id/txtUsername" />
 
             <TextView
                 android:id="@+id/textView5"
-                android:layout_width="143dp"
-                android:layout_height="52dp"
+                android:layout_width="146dp"
+                android:layout_height="35dp"
                 android:fontFamily="@font/jua"
                 android:text="password"
                 android:textAlignment="center"
                 android:textColor="#825C03"
                 android:textSize="25sp"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/txtPassword"
                 app:layout_constraintEnd_toEndOf="@+id/txtPassword"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/txtPassword"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.656" />
+                app:layout_constraintStart_toStartOf="@+id/txtPassword" />
 
             <ImageButton
                 android:id="@+id/btnLoginUser"

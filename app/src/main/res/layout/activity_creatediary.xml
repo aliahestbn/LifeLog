@@ -42,6 +42,8 @@
             app:layout_constraintStart_toStartOf="@+id/roundedEditText7" />
 
         <EditText
+
+            android:fontFamily="@font/jua"
             android:id="@+id/roundedEditText7"
             android:layout_width="295dp"
             android:layout_height="319dp"
@@ -49,7 +51,7 @@
             android:background="@drawable/rounded_edittext_background"
             android:gravity="top|left"
             android:hint="type here..."
-            android:inputType="text"
+            android:inputType="textMultiLine"
             android:padding="10dp"
             app:layout_constraintBottom_toTopOf="@+id/imageButton11"
             app:layout_constraintEnd_toEndOf="parent"
