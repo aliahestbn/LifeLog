@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 
@@ -17,6 +18,8 @@ class History : AppCompatActivity() {
     private lateinit var historyAdapter: HistoryAdapter
     private lateinit var databaseReference: DatabaseReference
     private lateinit var userEmailTextView: TextView
+
+    val profilePictureUrl = EditProfile.profilePictureUrl
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,6 +37,11 @@ class History : AppCompatActivity() {
         databaseReference = FirebaseDatabase.getInstance().getReference("DiaryEntries").child(userUid)
 
         fetchDatesFromFirebase()
+
+        // Use the profilePictureUrl directly from the companion object
+        if (profilePictureUrl != null) {
+            Glide.with(this).load(profilePictureUrl).into(findViewById(R.id.imageView10))
+        }
     }
 
     private fun fetchDatesFromFirebase() {

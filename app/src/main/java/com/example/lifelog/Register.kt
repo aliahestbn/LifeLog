@@ -46,6 +46,11 @@ class Register : AppCompatActivity(){
 
         }
     }
+
+    fun redirectToMain(view: View) { //Back > MainActivity
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
+    }
 }
 
 //validation pag existing na yung username sa database

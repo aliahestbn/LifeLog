@@ -65,9 +65,10 @@
                 android:padding="10dp"
                 app:layout_constraintBottom_toTopOf="@+id/txtPassword"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.436"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.92" />
+                app:layout_constraintVertical_bias="0.849" />
 
             <EditText
                 android:id="@+id/txtPassword"
@@ -80,9 +81,10 @@
                 android:padding="10dp"
                 app:layout_constraintBottom_toTopOf="@+id/btnLoginUser"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.45"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="1.0" />
+                app:layout_constraintVertical_bias="0.967" />
 
             <TextView
                 android:id="@+id/textView6"
@@ -98,7 +100,7 @@
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/txtUsername"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.517" />
+                app:layout_constraintVertical_bias="0.46" />
 
             <TextView
                 android:id="@+id/textView5"
@@ -114,7 +116,7 @@
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/txtPassword"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.69" />
+                app:layout_constraintVertical_bias="0.656" />
 
             <ImageButton
                 android:id="@+id/btnLoginUser"
