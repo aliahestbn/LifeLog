@@ -117,7 +117,7 @@ class EditProfile : AppCompatActivity() {
                             .show()
                     }
             } else {
-                Toast.makeText(this, "Please select a profile picture", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "No changes made", Toast.LENGTH_SHORT).show()
             }
         } else {
             // Handle the case where the user UID is null
@@ -143,8 +143,8 @@ class EditProfile : AppCompatActivity() {
 
                     // Pass the updated profilePictureUrl to the History activity
                     //val intent = Intent(this@EditProfile, History::class.java)
-                   // intent.putExtra("profilePictureUrl", profilePictureUrl)
-                   // startActivity(intent)
+                    //intent.putExtra("profilePictureUrl", profilePictureUrl)
+                    //startActivity(intent)
 
                     // If needed, you can do something after successfully saving the URL
                 }
@@ -152,8 +152,16 @@ class EditProfile : AppCompatActivity() {
                     // Handle the case where saving the URL failed
                 }
         }
+        // Save the profilePictureUrl to SharedPreferences
+        saveProfilePictureUrlToPreferences(profilePictureUrl)
     }
 
+    private fun saveProfilePictureUrlToPreferences(profilePictureUrl: String) {
+        val sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+        editor.putString("profilePictureUrl", profilePictureUrl)
+        editor.apply()
+    }
 
     fun fetchAndDisplayProfilePicture() {
         val userUid = getCurrentUserUid()
@@ -188,8 +196,8 @@ class EditProfile : AppCompatActivity() {
         fetchAndDisplayProfilePicture()
     }
 
-    fun redirectToHomePage2(view: View) {
-        val intent = Intent(this, EditProfile::class.java)
+    fun redirectToHomePage(view: View) {
+        val intent = Intent(this, HomePage::class.java)
         startActivity(intent)
     }
 

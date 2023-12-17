@@ -134,7 +134,7 @@
             android:layout_marginTop="616dp"
             android:backgroundTint="#00FFFFFF"
             android:contentDescription="save profile"
-            android:onClick="redirectToHomePage2"
+            android:onClick="redirectToHomePage"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.487"
             app:layout_constraintStart_toStartOf="parent"

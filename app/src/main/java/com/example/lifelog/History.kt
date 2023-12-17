@@ -38,9 +38,14 @@ class History : AppCompatActivity() {
 
         fetchDatesFromFirebase()
 
+        // Retrieve profilePictureUrl from SharedPreferences
+        val sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE)
+        val savedProfilePictureUrl = sharedPreferences.getString("profilePictureUrl", null)
+
+
         // Use the profilePictureUrl directly from the companion object
         if (profilePictureUrl != null) {
-            Glide.with(this).load(profilePictureUrl).into(findViewById(R.id.imageView10))
+            Glide.with(this).load(savedProfilePictureUrl).into(findViewById(R.id.imageView10))
         }
     }
 
