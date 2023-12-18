@@ -8,7 +8,6 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 
@@ -18,8 +17,6 @@ class History : AppCompatActivity() {
     private lateinit var historyAdapter: HistoryAdapter
     private lateinit var databaseReference: DatabaseReference
     private lateinit var userEmailTextView: TextView
-
-    val profilePictureUrl = EditProfile.profilePictureUrl
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,35 +34,26 @@ class History : AppCompatActivity() {
         databaseReference = FirebaseDatabase.getInstance().getReference("DiaryEntries").child(userUid)
 
         fetchDatesFromFirebase()
-
-        // Retrieve profilePictureUrl from SharedPreferences
-        val sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE)
-        val savedProfilePictureUrl = sharedPreferences.getString("profilePictureUrl", null)
-
-
-        // Use the profilePictureUrl directly from the companion object
-        if (profilePictureUrl != null) {
-            Glide.with(this).load(savedProfilePictureUrl).into(findViewById(R.id.imageView10))
-        }
     }
 
     private fun fetchDatesFromFirebase() {
-        val entriesList = mutableListOf<Pair<String, String>>() // Pair of date and content
+        val entriesList = mutableListOf<Triple<String, String, String>>() // Triple of date, content, and ID
 
         databaseReference.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 for (snapshot in dataSnapshot.children) {
                     val date = snapshot.child("date").getValue(String::class.java) ?: ""
                     val content = snapshot.child("content").getValue(String::class.java) ?: ""
+                    val id = snapshot.key ?: ""
 
-                    entriesList.add(Pair(date, content))
+                    entriesList.add(Triple(date, content, id))
                 }
 
                 historyAdapter = HistoryAdapter(entriesList) { selectedEntry ->
-                    // Handle item click, open CreateDiary activity with selected date
                     val intent = Intent(this@History, CreateDiary::class.java)
                     intent.putExtra("selectedDate", selectedEntry.first) // Pass the selected date
                     intent.putExtra("selectedContent", selectedEntry.second) // Pass the selected content
+                    intent.putExtra("selectedId", selectedEntry.third) // Pass the selected ID
                     startActivity(intent)
                 }
                 recyclerView.adapter = historyAdapter
@@ -76,6 +64,7 @@ class History : AppCompatActivity() {
             }
         })
     }
+
 
     fun redirectToHomePage(view: View) {
         val intent = Intent(this, HomePage::class.java)

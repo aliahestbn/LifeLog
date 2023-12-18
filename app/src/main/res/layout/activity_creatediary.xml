@@ -43,16 +43,16 @@
 
         <EditText
 
-            android:fontFamily="@font/jua"
             android:id="@+id/roundedEditText7"
             android:layout_width="295dp"
             android:layout_height="319dp"
             android:layout_margin="16dp"
             android:background="@drawable/rounded_edittext_background"
+            android:fontFamily="@font/jua"
             android:gravity="top|left"
             android:hint="type here..."
             android:inputType="textMultiLine"
-            android:padding="10dp"
+            android:padding="24dp"
             app:layout_constraintBottom_toTopOf="@+id/imageButton11"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -90,6 +90,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="684dp"
             android:backgroundTint="#00FFFFFF"
+            android:text="Delete"
             android:contentDescription="delete"
             android:onClick="redirectToHomePage3"
             app:layout_constraintEnd_toEndOf="parent"
