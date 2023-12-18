@@ -32,7 +32,7 @@
             android:background="@drawable/rounded_edittext_background"
             android:fontFamily="@font/jua"
             android:hint="username"
-            android:inputType="textPassword"
+            android:inputType="textEmailAddress"
             android:paddingLeft="24dp"
             app:layout_constraintBottom_toTopOf="@+id/txtPassword"
             app:layout_constraintEnd_toEndOf="parent"
