@@ -31,7 +31,7 @@
             android:layout_margin="16dp"
             android:background="@drawable/rounded_edittext_background"
             android:fontFamily="@font/jua"
-            android:hint="username"
+            android:hint="email"
             android:inputType="textEmailAddress"
             android:paddingLeft="24dp"
             app:layout_constraintBottom_toTopOf="@+id/txtPassword"
